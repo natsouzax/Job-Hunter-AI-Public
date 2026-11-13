@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Job Hunter</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23c7f36b'/%3E%3Ctext x='5' y='22' font-family='Arial' font-weight='900' font-size='15'%3EJH%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#dashboard" aria-label="Job Hunter">
+        <span class="brand-mark">JH</span>
+        <span><strong>Job Hunter</strong><small>Application cockpit</small></span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <button class="nav-item active" data-view="dashboard"><span>⌂</span> Visão geral</button>
+        <button class="nav-item" data-view="new-job"><span>＋</span> Nova vaga</button>
+        <button class="nav-item" data-view="profile"><span>◎</span> Perfil</button>
+        <button class="nav-item" data-view="system"><span>◇</span> Sistema</button>
+      </nav>
+      <div class="sidebar-foot">
+        <span class="status-dot"></span>
+        <span><strong>Execução local</strong><small>Nada é enviado sozinho</small></span>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div><p class="eyebrow">CENTRO DE CONTROLO</p><h1 id="page-title">Visão geral</h1></div>
+        <button class="primary compact" data-go="new-job">＋ Adicionar vaga</button>
+      </header>
+
+      <div id="notice" class="notice hidden" role="status"></div>
+
+      <section id="view-dashboard" class="view active">
+        <div id="onboarding"></div>
+        <div class="stats" id="stats"></div>
+        <div class="section-head"><div><p class="eyebrow">PIPELINE</p><h2>Candidaturas</h2></div><button class="ghost" id="refresh">↻ Atualizar</button></div>
+        <div id="applications" class="applications"></div>
+      </section>
+
+      <section id="view-new-job" class="view">
+        <div class="section-head"><div><p class="eyebrow">SCOUT</p><h2>Avaliar uma nova vaga</h2><p>O anúncio é tratado como dados não confiáveis.</p></div></div>
+        <form id="job-form" class="panel form-grid">
+          <label>Empresa<input name="company" required placeholder="Nome da empresa"></label>
+          <label>Cargo<input name="title" required placeholder="Ex.: Técnico de suporte"></label>
+          <label>Localização<input name="location" required placeholder="Ex.: Covilhã"></label>
+          <label>Modo de trabalho<select name="work_mode"><option value="onsite">Presencial</option><option value="hybrid">Híbrido</option><option value="remote">Remoto</option><option value="unknown">Desconhecido</option></select></label>
+          <label class="span-2">URL da fonte<input name="source_url" required placeholder="https://... ou fixture:..."></label>
+          <label class="span-2">Descrição<textarea name="description" required rows="5" placeholder="Cole a descrição integral da vaga"></textarea></label>
+          <fieldset class="span-2"><legend>Horário (opcional)</legend><div class="inline-fields"><select name="day"><option value="">Sem horário informado</option><option value="0">Segunda</option><option value="1">Terça</option><option value="2">Quarta</option><option value="3">Quinta</option><option value="4">Sexta</option><option value="5">Sábado</option><option value="6">Domingo</option></select><input type="time" name="start"><input type="time" name="end"></div></fieldset>
+          <fieldset class="span-2"><legend>Requisitos</legend><div id="requirements"></div><button type="button" class="ghost" id="add-requirement">＋ Requisito</button></fieldset>
+          <div class="form-actions span-2"><button class="primary" type="submit">Executar pipeline</button></div>
+        </form>
+      </section>
+
+      <section id="view-profile" class="view">
+        <div class="section-head"><div><p class="eyebrow">FONTE DE VERDADE</p><h2>Perfil verificado</h2><p>Só estes factos podem aparecer nos documentos.</p></div></div>
+        <div id="profile-content"></div>
+      </section>
+
+      <section id="view-system" class="view">
+        <div class="section-head"><div><p class="eyebrow">DIAGNÓSTICO</p><h2>Sistema e limites</h2></div></div>
+        <div id="system-content"></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="application-dialog"><button class="dialog-close" aria-label="Fechar">×</button><div id="application-detail"></div></dialog>
+  <script src="/app.js" defer></script>
+</body>
+</html>

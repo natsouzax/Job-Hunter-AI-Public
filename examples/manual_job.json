@@ -1,0 +1,13 @@
+{
+  "company": "Loja Exemplo",
+  "title": "Apoio informático part-time",
+  "location": "Covilhã",
+  "description": "Vaga de teste para apoio informático e atendimento part-time. Não representa anúncio real.",
+  "source_url": "fixture:loja-exemplo-apoio-mvp",
+  "requirements": [
+    {"key": "it-support", "description": "Experiência em apoio informático", "mandatory": true},
+    {"key": "service", "description": "Atendimento ao público", "mandatory": false}
+  ],
+  "schedule": null,
+  "work_mode": "onsite"
+}

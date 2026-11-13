@@ -1,0 +1,13 @@
+{
+  "company": "Loja Exemplo",
+  "title": "Apoio informático part-time",
+  "location": "Covilhã",
+  "description": "Vaga sintética de demonstração para apoio informático e atendimento part-time. Não representa anúncio real.",
+  "source_url": "fixture:loja-exemplo-demo",
+  "requirements": [
+    {"key": "it-support", "description": "Experiência em apoio informático", "mandatory": true},
+    {"key": "service", "description": "Atendimento ao público", "mandatory": false}
+  ],
+  "schedule": {"windows": [{"day": 5, "start": "10:00", "end": "14:00"}]},
+  "work_mode": "onsite"
+}

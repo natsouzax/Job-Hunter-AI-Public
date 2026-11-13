@@ -1,0 +1,9 @@
+{
+  "name": "Alex Exemplo",
+  "location": "Covilhã, Portugal",
+  "facts": [
+    {"category": "experience", "statement": "Experiência em apoio informático e atendimento ao público", "tags": ["it-support", "service"]},
+    {"category": "skills", "statement": "Conhecimentos de Python e suporte técnico", "tags": ["python", "it-support"]}
+  ],
+  "availability": [{"day": 5, "start": "10:00", "end": "14:00"}]
+}

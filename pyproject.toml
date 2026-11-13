@@ -1,0 +1,15 @@
+[project]
+name = "job-hunter-ai"
+version = "0.1.0"
+description = "Local job-application pipeline: Scout -> Creator -> Analyzer, human approval before anything is sent."
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+job-hunter = "job_hunter.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+job_hunter = ["web_assets/*.html", "web_assets/*.css", "web_assets/*.js"]

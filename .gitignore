@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+data/
+artifacts/
+.runtime/
+.coordination/workspaces/
+.coordination/
+experiments/
+docs/STORAGE_REPORT.md
+docs/native-coordination-*.md
